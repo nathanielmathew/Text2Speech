@@ -1,0 +1,28 @@
+
+{
+  "manifest_version": 2,
+
+  "name": "Text2Speech",
+  "description": "An extension used to convert English text to speech on whichever text you highlight on a webpage. Highlight the required text and click the Text2Speech icon from your browser extensions",
+  "author": "Nathaniel Ryan Mathew",
+  "version": "2.0.1",
+  "background": {
+    "scripts": ["background.min.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": [ "polyfill.min.js", "ext.min.js"],
+      "run_at": "document_end"
+    }],
+  "browser_action": {
+    "default_icon": "speech.png"
+  },
+  "icons": { "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png" },
+    "permissions": [
+      "activeTab",
+      "clipboardRead"
+    ]
+}
