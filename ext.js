@@ -5,8 +5,11 @@ var pageToSpeech = {
       fallbackAudio: null
     },
     initialize: function() {
-     
-        if (!pageToSpeech.hasText()) { return;}
+        // if (this.data.speechInProgress) {
+        //   this.data.fallbackAudio.pause();
+        //   pageToSpeech.data.speechInProgress = false;
+        // }
+        if (!pageToSpeech.hasText() || (this.data.speechInProgress)) { return;}
         if (!pageToSpeech.trySpeechSynthesizer()) {
           pageToSpeech.trySpeechApi();
         }
@@ -62,7 +65,7 @@ var pageToSpeech = {
         this.data.fallbackAudio.pause();
       }
       this.data.speechInProgress = true;
-      this.data.fallbackAudio = new Audio("http://api.voicerss.org/?key=your_api_key&src=" + this.data.highlightedText);
+      this.data.fallbackAudio = new Audio("http://api.voicerss.org/?key=20ae15bb063e44beb4797449de15174c&src=" + this.data.highlightedText);
       this.data.fallbackAudio.addEventListener("error", function(evt) {
         alert("Sorry, we cannot produce speech right now. Try upgrading your Chrome browser!");
       })
@@ -77,7 +80,7 @@ var pageToSpeech = {
       onkeydown = onkeyup = function(evt) {
         var e = evt || event;
         activeKeys[e.keyCode] = e.type == 'keydown';
-        if (activeKeys[16] && activeKeys[89]) {
+        if (activeKeys[16] && activeKeys[17]  && activeKeys[89]) {  //key 16 = SHIFT, 17 = CTRL, 89 = Y
           pageToSpeech.initialize();
         }
       };
