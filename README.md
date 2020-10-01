@@ -2,8 +2,9 @@
 <img src="./speech.png" align="center" height="100px"></img>
 Text2Speech
 </h1>
-A Chrome Browser Extension to dictate selected text on a web page. This extension converts the highlighted text to speech whenever the extension icon or hotkey is clicked. May be especially useful for individuals who are blind, visually impaired, or those who just don't want to use their glasses
-####
+A Chrome Browser Extension to dictate selected text on a web page. This extension converts the highlighted text to speech whenever the extension icon or hotkey is clicked. May be especially useful for individuals who are blind, visually impaired, or those who just don't want to use their glasses.
+
+###
  Hotkey: <code>CTRL + SHIFT + Y</code>
 
 ## Installation
